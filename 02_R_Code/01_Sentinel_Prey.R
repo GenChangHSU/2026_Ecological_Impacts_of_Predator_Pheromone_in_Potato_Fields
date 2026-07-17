@@ -3,7 +3,7 @@
 ##
 ## Author: Gen-Chang Hsu
 ##
-## Date: 2026-04-29
+## Date: 2026-07-16
 ##
 ## Description:
 ## 1. Organize the raw data
@@ -185,6 +185,14 @@ sentinel_prey_clean <- sentinel_prey_raw %>%
   mutate(N_predation_diff_corrected = if_else(N_predation_diff_corrected < 0, 0, round(N_predation_diff_corrected))) %>% 
   drop_na(N_control_diff, N_predation_diff) %>%
   filter(is.na(Notes) | !str_detect(Notes, "hatched|disappeared")) 
+
+# background non-predation mortality
+sentinel_prey_clean %>% 
+  group_by(Pheromone_treatment) %>% 
+  summarise(mean = mean(N_control_diff),
+            sd = sd(N_control_diff),
+            n = n(),
+            se = sd / sqrt(n))
 
 ### Exclude the observations with shrunk eggs
 sentinel_prey_clean_shrunk_eggs_excluded <- sentinel_prey_raw %>% 
