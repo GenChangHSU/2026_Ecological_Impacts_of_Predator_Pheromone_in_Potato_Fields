@@ -209,9 +209,9 @@ sentinel_prey_clean_shrunk_eggs_excluded <- sentinel_prey_raw %>%
 # 2. Analyze egg predation rates in the control and pheromone-treated plots (shrunk eggs included) ----
 ### (1) Test overdispersion
 predation_mortality_poisson <- glmmTMB(N_predation_diff_corrected ~ Pheromone_treatment + Trial_id,
-                                         data = sentinel_prey_clean,
-                                         family = "poisson",
-                                         na.action = na.omit)
+                                       data = sentinel_prey_clean,
+                                       family = "poisson",
+                                       na.action = na.omit)
 
 predation_mortality_nb <- glmmTMB(N_predation_diff_corrected ~ Pheromone_treatment + Trial_id,
                                   data = sentinel_prey_clean,
@@ -223,10 +223,10 @@ AIC(predation_mortality_poisson, predation_mortality_nb)  # negative bimonial is
 
 ### (2) Test zero inflation
 predation_mortality_zi_nb <- glmmTMB(N_predation_diff_corrected ~ Pheromone_treatment + Trial_id,
-                                  data = sentinel_prey_clean,
-                                  ziformula = ~ Pheromone_treatment,
-                                  family = "nbinom2",
-                                  na.action = na.omit)
+                                     data = sentinel_prey_clean,
+                                     ziformula = ~ Pheromone_treatment,
+                                     family = "nbinom2",
+                                     na.action = na.omit)
 
 testZeroInflation(predation_mortality_nb)  # zero inflation not significant
 lrtest(predation_mortality_nb, predation_mortality_zi_nb)  # zero inflation not significant
@@ -248,29 +248,29 @@ cld(emmeans_predation_mortality, Letters = letters)
 plot_model(predation_mortality_nb, 
            type = "pred", 
            terms = c("Pheromone_treatment"))
-  
+
 
 # 3. Analyze egg predation rates in the control and pheromone-treated plots (shrunk eggs excluded) ----
 ### (1) Test overdispersion
 predation_mortality_poisson_shrunk_eggs_excluded <- glmmTMB(N_predation_diff_corrected ~ Pheromone_treatment + Trial_id,
-                                       data = sentinel_prey_clean_shrunk_eggs_excluded,
-                                       family = "poisson",
-                                       na.action = na.omit)
+                                                            data = sentinel_prey_clean_shrunk_eggs_excluded,
+                                                            family = "poisson",
+                                                            na.action = na.omit)
 
 predation_mortality_nb_shrunk_eggs_excluded <- glmmTMB(N_predation_diff_corrected ~ Pheromone_treatment + Trial_id,
-                                  data = sentinel_prey_clean_shrunk_eggs_excluded,
-                                  family = "nbinom2",
-                                  na.action = na.omit)
+                                                       data = sentinel_prey_clean_shrunk_eggs_excluded,
+                                                       family = "nbinom2",
+                                                       na.action = na.omit)
 
 lrtest(predation_mortality_poisson_shrunk_eggs_excluded, predation_mortality_nb_shrunk_eggs_excluded)  # overdispersion is significant
 AIC(predation_mortality_poisson_shrunk_eggs_excluded, predation_mortality_nb_shrunk_eggs_excluded)  # negative binomial model is better
 
 ### (2) Test zero inflation
 predation_mortality_zi_nb_shrunk_eggs_excluded <- glmmTMB(N_predation_diff_corrected ~ Pheromone_treatment + Trial_id,
-                                     data = sentinel_prey_clean_shrunk_eggs_excluded,
-                                     ziformula = ~ 1,
-                                     family = "nbinom2",
-                                     na.action = na.omit)
+                                                          data = sentinel_prey_clean_shrunk_eggs_excluded,
+                                                          ziformula = ~ 1,
+                                                          family = "nbinom2",
+                                                          na.action = na.omit)
 
 testZeroInflation(predation_mortality_nb_shrunk_eggs_excluded)  # zero inflation not significant
 lrtest(predation_mortality_nb_shrunk_eggs_excluded, predation_mortality_zi_nb_shrunk_eggs_excluded)  # zero inflation not significant
@@ -347,7 +347,8 @@ sentinel_prey_clean_summary_by_treatment <- sentinel_prey_clean %>%
   group_by(Pheromone_treatment) %>% 
   summarise(Mean_n_predation_diff_corrected = mean(N_predation_diff_corrected, na.rm = T),
             N = n(),
-            SE = sd(N_predation_diff_corrected, na.rm = T)/sqrt(N))
+            SE = sd(N_predation_diff_corrected, na.rm = T)/sqrt(N),
+            CI = SE * qt(p = 0.975, df = N, lower.tail = T))
 
 ggplot(data = sentinel_prey_clean_summary_by_treatment) + 
   geom_col(aes(x = Pheromone_treatment, y = Mean_n_predation_diff_corrected, fill = Pheromone_treatment), show.legend = F, width = 0.5) + 
