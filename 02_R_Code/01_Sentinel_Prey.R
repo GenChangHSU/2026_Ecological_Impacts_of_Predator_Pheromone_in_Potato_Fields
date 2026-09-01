@@ -363,6 +363,7 @@ ggplot(data = sentinel_prey_clean_summary_by_treatment) +
 
 ggsave("./03_Outputs/Figures/Predation_Rates_by_Treatment_Shrunk_Eggs_Included.tiff", width = 4, height = 4.5, dpi = 600, device = "tiff")
 
+get_wd()
 
 
 
