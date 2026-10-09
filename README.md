@@ -1,0 +1,11 @@
+## Evaluating the impact of a synthetic predator pheromone, a novel pest management tool, on target pests and insect communities in potato fields
+
+__Hsu, G-C.__, T-H. Chao, and S-J. Sun. 2027. Insect adaptation to urban environments: A synthesis of morphological, behavioural and physiological responses. <i>*Current Opinion in Insect Science* </i> 79: 101620. https://doi.org/10.1016/j.cois.2026.101620</p>
+
+## Abstract
+
+Despite their reputation for species specificity, pheromones can influence interactions across trophic levels. This is particularly relevant in agricultural systems where predator-derived cues could influence pest and natural enemies. The predatory spined soldier bug, *Podisus maculiventris* (Say) (Hemiptera: Pentatomidae), preys upon the Colorado potato beetle, *Leptinotarsa decemlineata* (Say) (Coleoptera: Chrysomelidae), a major pest of solanaceous crops. Previous field work shows that a synthetic aggregation pheromone of *P. maculiventris* reduces beetle larval abundance through non-consumptive effects yet impacts on other herbivores and predators remain unclear. We hypothesized that synthetic predator pheromone cues alter herbivore and predator feeding behavior in an agroecosystem. We evaluated herbivore and natural enemy abundance and diversity in the field, measured predation using sentinel *L. decemlineata* egg clutches, and conducted greenhouse feeding assays with 5 predator taxa. Field results indicated a reduction in *L. decemlineata* larval abundance in pheromone-treated plots without detectable changes in overall herbivore or predator community abundance or diversity. Predation rates in pheromone-treated plots (mean ± SE: 9.8 ± 2.9 eggs consumed per 3 d) were 5 times higher compared to the control (1.4 ± 0.5 eggs consumed per 3 d). Greenhouse assays showed increased egg consumption by *P. maculiventris*. These findings suggest that the synthetic predator pheromone may enhance the foraging behavior of *P. maculiventris*, providing a potential mechanism for reduced *L. decemlineata* populations and a promising tool for potato pest management with minimal non-target impacts.
+
+## Article link
+
+[https://doi.org/10.1093/jisesa/ieag086](https://doi.org/10.1093/jisesa/ieag086)
