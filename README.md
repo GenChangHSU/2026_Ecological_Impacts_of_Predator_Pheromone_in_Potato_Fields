@@ -1,6 +1,6 @@
 ## Evaluating the impact of a synthetic predator pheromone, a novel pest management tool, on target pests and insect communities in potato fields
 
-__Hsu, G-C.__, T-H. Chao, and S-J. Sun. 2027. Insect adaptation to urban environments: A synthesis of morphological, behavioural and physiological responses. <i>*Current Opinion in Insect Science* </i> 79: 101620. https://doi.org/10.1016/j.cois.2026.101620</p>
+Martinez, L., A. Trejo, S. Paz-Le Draoulec, __G-C. Hsu__, and J.S. Thaler. 2026. Evaluating the impact of a synthetic predator pheromone, a novel pest management tool, on target pests and insect communities in potato fields. <i>*Journal of Insect Science*</i> 26(4): ieag086. https://doi.org/10.1093/jisesa/ieag086</p>
 
 ## Abstract
 
